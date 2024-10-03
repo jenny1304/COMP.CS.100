@@ -1,6 +1,7 @@
 """
 COMP.CS.100
 huyen.pham@tuni.fi
+
 """
 
 def sort_calcualte(list):
