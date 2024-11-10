@@ -9,7 +9,7 @@ def store_data(filename):
     Read the data from the file and store it in a dictionary
     Return: A nested dictionary containing the data.
             The keys are department names and the payloads are
-            dictionaries containing 'course_name' as key and 'credits' as payload.
+            dictionaries containing 'coursue_name' as key and 'credits' as payload.
     """
     #Initialize a new dictionary for data
     department_courses = {}
@@ -141,26 +141,27 @@ def main():
         print("\n[A]dd / [C]redits / [D]elete / [P]rint all / p[R]int department / [Q]uit")
         #Split input to separate the department, course name, and course credits when needed
         user_input = input("Enter command: ").split()
+
+        #In cases when the department is needed (add, calculate credit, print department info, delete)
+        if len(user_input) >= 2:
+            department = user_input[1].strip()
+
         print("")
 
         if user_input[0] == "p":
             print_all_data(department_courses)
 
         elif user_input[0] == "r":
-            # Department names are single words so it is always the next index value in the list
-            department = user_input[1].strip()
             print_department_info(department_courses,department)
 
         elif user_input[0] == "c":
-            department = user_input[1].strip()
             calculate_total_credits(department_courses,department)
 
         elif user_input[0] == "a":
-            #Check if the user only enters the department name
+            #Check if the user has entered enough required info
             if len(user_input)>2:
                 # Initialize a list that will contain the splitted words of the course name
                 course_list = []
-                department = user_input[1].strip()
                 #Add the words to the list
                 for i in range(2, len(user_input)-1):
                     course_list.append(user_input[i])
@@ -173,7 +174,6 @@ def main():
 
         elif user_input[0] == "d":
             course_list = []
-            department = user_input[1].strip()
             for i in range(2, len(user_input)):
                 course_list.append(user_input[i])
             course = " ".join(course_list)
