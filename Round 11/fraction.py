@@ -1,0 +1,121 @@
+"""
+COMP.CS.100 Ohjelmointi 1 / Programming 1
+Fractions code template
+"""
+
+class Fraction:
+    """
+    This class represents one single fraction that consists of
+    numerator (osoittaja) and denominator (nimittäjä).
+    """
+
+    def __init__(self, numerator, denominator):
+        """
+        Constructor. Checks that the numerator and denominator are of
+        correct type and initializes them.
+
+        :param numerator: int, fraction's numerator
+        :param denominator: int, fraction's denominator
+        """
+
+        # isinstance is a standard function which can be used to check if
+        # a value is an object of a certain class.  Remember, in Python
+        # all the data types are implemented as classes.
+        # ``isinstance(a, b´´) means more or less the same as ``type(a) is b´´
+        # So, the following test checks that both parameters are ints as
+        # they should be in a valid fraction.
+        if not isinstance(numerator, int) or not isinstance(denominator, int):
+            raise TypeError
+
+        # Denominator can't be zero, not in mathematics, and not here either.
+        elif denominator == 0:
+            raise ValueError
+
+        self.__numerator = numerator
+        self.__denominator = denominator
+
+    def get_numerator(self):
+        """Get the numerator of the fraction"""
+        return self.__numerator
+
+    def get_denominator(self):
+        """Get the denominator of the fraction"""
+        return self.__denominator
+
+    def return_string(self):
+        """
+        :returns: str, a string-presentation of the fraction in the format
+                       numerator/denominator.
+        """
+
+        if self.__numerator * self.__denominator < 0:
+            sign = "-"
+
+        else:
+            sign = ""
+
+        return f"{sign}{abs(self.__numerator)}/{abs(self.__denominator)}"
+
+    def simplify(self):
+        """Simplify the fraction and return new numerator and denominator"""
+        divisor = greatest_common_divisor(self.__numerator,self.__denominator)
+        self.__numerator = self.__numerator//divisor
+        self.__denominator=self.__denominator//divisor
+
+    def complement(self):
+        """modifying the object that the method is called for"""
+        numerator = 0-self.__numerator
+        new_frac = Fraction(numerator,self.__denominator)
+        return new_frac
+
+    def reciprocal(self):
+        """Return the reciprocal"""
+        numer = self.__denominator
+        deno =self.__numerator
+        new_frac = Fraction(numer,deno)
+        return new_frac
+
+    def multiply(self, frac2):
+        """Multiplyy the 2 fractions"""
+        numerator= self.__numerator * frac2.get_numerator()
+        denominator = self.__denominator * frac2.get_denominator()
+        new = Fraction(numerator,denominator)
+        return new
+
+    def divide(self,frac2):
+        """Divide the 2 fractions"""
+        numerator = self.__numerator * frac2.get_denominator()
+        denominator = self.__denominator * frac2.get_numerator()
+        new = Fraction(numerator, denominator)
+        return new
+
+    def add(self, frac2):
+        """Add the 2 fractions"""
+        numerator = self.__numerator * frac2.get_denominator() + self.__denominator * frac2.get_numerator()
+        denominator = self.__denominator * frac2.get_denominator()
+        new = Fraction(numerator, denominator)
+        return new
+
+    def deduct(self,frac2):
+        """Find the difference between the two fractions"""
+        numerator = self.__numerator * frac2.get_denominator() -frac2.get_numerator() * self.__denominator
+        denominator = self.__denominator * frac2.get_denominator()
+        new = Fraction(numerator, denominator)
+        return new
+
+
+def greatest_common_divisor(a, b):
+    """
+    Euclidean algorithm. Returns the greatest common
+    divisor (suurin yhteinen tekijä).  When both the numerator
+    and the denominator is divided by their greatest common divisor,
+    the result will be the most reduced version of the fraction in question.
+    """
+
+    while b != 0:
+        a, b = b, a % b
+
+    return a
+
+
+
