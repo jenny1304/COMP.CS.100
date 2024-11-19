@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f2e916c-e198-4f95-aad5-b071783a72db" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Round 11 &amp; 12/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Round 11 &amp; 12/.idea/Round 11 &amp; 12.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Round 11 &amp; 12/.idea/Round 11 &amp; 12.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Round 11 &amp; 12/character_a_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Round 11 &amp; 12/character_a_template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Round 11 &amp; 12/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Round 11 &amp; 12/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Round 11 &amp; 12/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Round 11 &amp; 12/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Round 11 &amp; 12/fraction calculator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Round 11 &amp; 12/fraction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Round 11 &amp; 12/fractions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Round 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Round 9/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +42,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.character_a_template.executor": "Run",
-    "Python.character_b_template.executor": "Run",
     "Python.fraction calculator.executor": "Run",
     "Python.fraction.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font"
   }
 }]]></component>
